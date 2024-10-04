@@ -84,4 +84,5 @@ describe('ParaBank Test', () => {
     cy.get('input[value="Apply Now"]').click()
     cy.get('a[href="logout.htm"]').click()
   })
+  
 })
