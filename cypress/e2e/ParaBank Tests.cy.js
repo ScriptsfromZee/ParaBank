@@ -72,4 +72,16 @@ describe('ParaBank Test', () => {
     cy.get('input[value="Update Profile"]').click()
     cy.get('a[href="logout.htm"]').click()
   })
+
+  it('User 1 Requests Loan', () => {
+    cy.visit('https://parabank.parasoft.com/parabank/index.htm')
+    cy.get('input[name="username"]').type('David')
+    cy.get('input[name="password"]').type('20December!')
+    cy.get('input[value="Log In"]').click()
+    cy.get('a[href="requestloan.htm"]').click()
+    cy.get('input[id="amount"]').type('50')
+    cy.get('input[id="downPayment"]').type('0')
+    cy.get('input[value="Apply Now"]').click()
+    cy.get('a[href="logout.htm"]').click()
+  })
 })
