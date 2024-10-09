@@ -31,5 +31,30 @@ Viewing Transactions: Users can view their transaction history for better financ
 
 Parabank is often utilized in automated testing scenarios, particularly with tools like Cypress or Selenium, to validate banking functionalities. The tests cover various aspects of the application, ensuring that all features work as intended. The tests present here were written using Cypress. 
 
+## Prerequisites
+
+Have an IDE installed on your computer to be able to view the code locally.
+
+Have a good working knowledge of Git and Github and well as JavaScript.
+
+Have a browser installed on your computer.
+
+## Setup
+
+Open a command line terminal (Git bash preferrably) and navigate to a directory where you would like to save the work folder using cd.
+
+Clone the repository with git clone https://github.com/ScriptsfromZee/ParaBank
+
+To get the current working tree, git fetch --all, then checkout to "main" branch.
+
+Finally, run the test scripts within the login.cy.js file by doing the following:
+
+Navigate to the root directory with a command line terminal.
+
+Run npm install, this install all the project dependencies.
+
+If you have chrome installed run npm run cy-chrome or npm run cy-firefox if you have firefox installed to start the test.
+
+
 
 
