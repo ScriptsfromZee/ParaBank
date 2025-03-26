@@ -13,7 +13,8 @@ describe('ParaBank Test', () => {
   it('User 1 Sign Up', () => {
     cy.visit("/parabank/register.htm");
     cy.log("Navigated to ParaBank Site");
-
+    
+    // Each time you rerun the sign up tests, new account details are created
     // Fill out User 1's registration form
     cy.get(credentials.firstName).type('David');
     cy.get(credentials.lastName).type('Jones');
@@ -35,8 +36,8 @@ describe('ParaBank Test', () => {
     cy.visit('/parabank/index.htm');
 
     // Log in with User 1's credentials
-    cy.get(credentials.userName).type('David');
-    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+    cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
     // Submit login
     cy.get(buttons.login).click();
@@ -66,8 +67,8 @@ describe('ParaBank Test', () => {
   it("User 1 Pays Bill", () => {
     // Log in as User 1
     cy.visit("/parabank/index.htm");
-    cy.get(credentials.userName).type("David");
-    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+    cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
     // Submit login
     cy.get(buttons.login).click();
@@ -96,8 +97,9 @@ describe('ParaBank Test', () => {
   it("User 1 Updates Contact Info", () => {
    // Log in as User 1
    cy.visit('/parabank/index.htm');
-   cy.get(credentials.userName).type("David");
-   cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+   cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
+    
    
    // Submit login
    cy.get(buttons.login).click();
@@ -118,8 +120,9 @@ describe('ParaBank Test', () => {
   it("User 1 Requests Loan", () => {
    // Log in as User 1
    cy.visit("/parabank/index.htm");
-   cy.get(credentials.userName).type("David");
-   cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+   cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
+    
 
    // Submit login
    cy.get(buttons.login).click();
@@ -143,8 +146,9 @@ describe('ParaBank Test', () => {
   it("User 2 Pays Bill", () => {
     // Log in as User 2
     cy.visit('/parabank/index.htm');
-    cy.get(credentials.userName).type("Eke");
-    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+    cy.get(credentials.loginUsername).type('Eke');
+    cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
+    
     cy.get(buttons.login).click();
 
     // Navigate to bill payment
