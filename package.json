@@ -1,0 +1,16 @@
+{
+  "name": "parabank",
+  "version": "1.0.0",
+  "description": "Parabank is a web application designed to simulate banking functionalities, allowing users to interact with a realistic banking environment. This application serves as a demo for testing various banking features and functionalities.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^14.2.0"
+  }
+}
