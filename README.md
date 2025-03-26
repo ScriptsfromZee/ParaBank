@@ -47,7 +47,7 @@ Clone the repository with git clone https://github.com/ScriptsfromZee/ParaBank
 
 Once you are done cloning, you should navigate to the folder you cloned.
 
-You should type: "cd parabank" 
+You should type: "cd ParaBank" 
 
 This command will move you into that directory.
 
