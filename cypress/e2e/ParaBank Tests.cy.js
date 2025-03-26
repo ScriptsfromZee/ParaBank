@@ -82,8 +82,8 @@ describe('ParaBank Test', () => {
    cy.get(payee.state).type("Lagos");
    cy.get(payee.zipcode).type("500102");
    cy.get(payee.phoneNumber).type("08020987645");
-   cy.get(payee.accountNumber).type("17784");
-   cy.get(payee.verifyAccount).type("17784");
+   cy.get(payee.accountNumber).type("13899");
+   cy.get(payee.verifyAccount).type("13899");
    cy.get(payee.amount).type("225");
 
    // Submit payment
@@ -128,7 +128,7 @@ describe('ParaBank Test', () => {
    cy.get(buttons.requestLoan).click();
 
    // Fill out loan request form
-   const loanAmount = 50;
+   const loanAmount = 500;
    const downPayment = 0;
    
    // Enter loan details
@@ -140,7 +140,7 @@ describe('ParaBank Test', () => {
    cy.get(buttons.logOut).click();
    
   });
-  it.only("User 2 Pays Bill", () => {
+  it("User 2 Pays Bill", () => {
     // Log in as User 2
     cy.visit('/parabank/index.htm');
     cy.get(credentials.userName).type("Eke");
@@ -157,8 +157,8 @@ describe('ParaBank Test', () => {
    cy.get(payee.state).type("Lagos");
    cy.get(payee.zipcode).type("500101");
    cy.get(payee.phoneNumber).type("0802098767896");
-   cy.get(payee.accountNumber).type("177678");
-   cy.get(payee.verifyAccount).type("177678");
+   cy.get(payee.accountNumber).type("13788");
+   cy.get(payee.verifyAccount).type("13788");
    cy.get(payee.amount).type("150");
 
    // Submit payment
@@ -169,9 +169,9 @@ describe('ParaBank Test', () => {
 
    //User 2 sends Message to Customer Care 
    cy.get(buttons.feedBack).eq(1).click();
-   cy.get(credentials.userName).type('Eke Jones')
+   cy.get(credentials.name).type('Eke Jones')
    cy.get(credentials.userEmail).type('jofyoziydu@gufum.com')
-   cy.get(credentials.phoneNumber).type('08020546796')
+   cy.get(credentials.phone).type('08020546796')
    cy.get(buttons.feedBackArea).type(credentials.userfeedBack)
    cy.get(buttons.submitButton).click()
   });

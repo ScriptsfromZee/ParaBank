@@ -9,6 +9,7 @@
     "userPasswordValue" : "20December@",
     "birthDate": "input[id='birthdate']",
     "phoneNumber": "input[id='customer.phoneNumber']",
+    "phone" : "input[id='phone']",
     "userStreet": "input[id='customer.address.street']",
     "userCity": "input[id='customer.address.city']",
     "userState": "input[id='customer.address.state']",  
@@ -16,6 +17,7 @@
     "userCountry": "input[id='country']",
     "userSsn": "input[id='customer.ssn']",
     "userName" : "input[name='username']",
+    "name" : "input[name='name']",
     "newUserZipcode" : "#customer\\.address\\.zipCode",
     "userfeedBack": "This is a good app that helps new testers get better with automation testing but I think more features should be added to this product to ensure more testing nonetheless, this product is wonderful"
   },
