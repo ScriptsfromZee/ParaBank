@@ -61,6 +61,6 @@ Run npm install, this install all the project dependencies.
 
 If you have chrome installed run npm run cy-chrome or npm run cy-firefox if you have firefox installed to start the test.
 
-
+ 
 
 
