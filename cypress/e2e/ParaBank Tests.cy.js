@@ -24,8 +24,8 @@ describe('ParaBank Test', () => {
     cy.get(credentials.phoneNumber).type('08020548796');
     cy.get(credentials.userSsn).type('12345678');
     cy.get(credentials.userName).type('David');
-    cy.get(credentials.userPassword).type(userPasswordValue);
-    cy.get(credentials.userPassword2).type(userPasswordValue);
+    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
+    cy.get(credentials.userPassword2).type(credentials.userPasswordValue);
     
     // Submit registration
     cy.get(buttons.register).click();
@@ -36,7 +36,7 @@ describe('ParaBank Test', () => {
 
     // Log in with User 1's credentials
     cy.get(credentials.userName).type('David');
-    cy.get(credentials.userPassword).type(userPasswordValue);
+    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
     
     // Submit login
     cy.get(buttons.login).click();
@@ -56,8 +56,8 @@ describe('ParaBank Test', () => {
     cy.get(credentials.phoneNumber).type('08020553796');
     cy.get(credentials.userSsn).type('12345378');
     cy.get(credentials.userName).type('Eke');
-    cy.get(credentials.userPassword).type(userPasswordValue);
-    cy.get(credentials.userPassword2).type(userPasswordValue);
+    cy.get(credentials.userPassword).type(credentials.userPasswordValue)
+    cy.get(credentials.userPassword2).type(credentials.userPasswordValue);
     
     // Submit registration
     cy.get(buttons.register).click();
@@ -67,7 +67,7 @@ describe('ParaBank Test', () => {
     // Log in as User 1
     cy.visit("/");
     cy.get(credentials.userName).type("David");
-    cy.get(credentials.userPassword).type(userPasswordValue);
+    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
     
     // Submit login
     cy.get(buttons.login).click();
@@ -174,7 +174,7 @@ describe('ParaBank Test', () => {
    cy.get(credentials.userName).type('Eke Jones')
    cy.get(credentials.userEmail).type('jofyoziydu@gufum.com')
    cy.get(credentials.phoneNumber).type('08020546796')
-   cy.get(buttons.feedBack).type('This is a good app that helps new testers get better with automation testing but I think more features should be added to this product to ensure more testing nonetheless, this product is wonderful')
+   cy.get(buttons.feedBack).type(credentials.userfeedBack)
    cy.get(buttons.submitButton).click()
   });
   

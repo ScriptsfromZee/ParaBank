@@ -16,7 +16,8 @@
     "userCountry": "input[id='country']",
     "userSsn": "input[id='customer.ssn']",
     "userName" : "input[id='customer.username']",
-    "newUserZipcode" : "#customer\\.address\\.zipCode"
+    "newUserZipcode" : "#customer\\.address\\.zipCode",
+    "userfeedBack": "This is a good app that helps new testers get better with automation testing but I think more features should be added to this product to ensure more testing nonetheless, this product is wonderful"
   },
   "buttons": {
     "register" : "input[value='Register']",
