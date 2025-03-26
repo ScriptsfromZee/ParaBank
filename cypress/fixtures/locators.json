@@ -1,0 +1,45 @@
+{
+  "credentials": {
+    "firstName": "input[id='customer.firstName']",
+    "lastName": "input[id='customer.lastName']" ,
+    "userEmail" : "input[id='email']",
+    "userEmailValue" : "terrnest444@mailinator.com",
+    "userPassword": "input[id='customer.password']",
+    "userPassword2": "input[id='repeatedPassword']",
+    "userPasswordValue" : "20December@",
+    "birthDate": "input[id='birthdate']",
+    "phoneNumber": "input[id='customer.phoneNumber']",
+    "userStreet": "input[id='customer.address.street']",
+    "userCity": "input[id='customer.address.city']",
+    "userState": "input[id='customer.address.state']",  
+    "userZipcode": "input[id='customer.address.zipCode']",
+    "userCountry": "input[id='country']",
+    "userSsn": "input[id='customer.ssn']",
+    "userName" : "input[id='customer.username']",
+    "newUserZipcode" : "#customer\\.address\\.zipCode"
+  },
+  "buttons": {
+    "register" : "input[value='Register']",
+    "login" : "input[value='Log In']",
+    "payBill": "a[href='billpay.htm']",
+    "sendPayment" : "input[value='Send Payment']",
+    "overView" : "a[href='overview.htm']",
+    "logOut" : "a[href='logout.htm']",
+    "updateProfile" : "a[href='updateprofile.htm']",
+    "requestLoan" : "a[href='requestloan.htm']",
+    "applyNow" : "input[value='Apply Now']",
+    "submitButton" : "input[type='submit']",
+    "feedBack" : "textarea[id='message']"
+  },
+  "payee" :{
+    "name" : "input[name='payee.name']",
+    "address" : "input[name='payee.address.street']",
+    "city" : "input[name='payee.address.city']",
+    "state" : "input[name='payee.address.state']",
+    "zipcode" : "input[name='payee.address.zipCode']",
+    "phoneNumber" : "input[name='payee.phoneNumber']",
+    "accountNumber" : "input[name='payee.accountNumber']",
+    "verifyAccount" : "input[name='verifyAccount']",
+    "amount" : "input[name='amount']"
+  }
+}
