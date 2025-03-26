@@ -140,13 +140,11 @@ describe('ParaBank Test', () => {
    cy.get(buttons.logOut).click();
    
   });
-  it("User 2 Pays Bill", () => {
+  it.only("User 2 Pays Bill", () => {
     // Log in as User 2
     cy.visit('/parabank/index.htm');
-    cy.get(credentials.userName).type("EkeJones");
+    cy.get(credentials.userName).type("Eke");
     cy.get(credentials.userPassword).type(credentials.userPasswordValue);
-    
-    // Login
     cy.get(buttons.login).click();
 
     // Navigate to bill payment
