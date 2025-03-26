@@ -11,7 +11,7 @@ describe('ParaBank Test', () => {
   });
 
   it('User 1 Sign Up', () => {
-    cy.visit("/");
+    cy.visit("/parabank/register.htm");
     cy.log("Navigated to ParaBank Site");
 
     // Fill out User 1's registration form
@@ -32,7 +32,7 @@ describe('ParaBank Test', () => {
   });
 
   it('User 1 Log In', () => {
-    cy.visit("/");
+    cy.visit('/parabank/register.htm');
 
     // Log in with User 1's credentials
     cy.get(credentials.userName).type('David');
@@ -43,7 +43,7 @@ describe('ParaBank Test', () => {
   });
 
   it('User 2 Sign Up', () => {
-    cy.visit("/");
+    cy.visit('/parabank/register.htm');
     cy.log("Navigated to ParaBank site");
 
     // Fill out User 2's registration form
@@ -95,7 +95,7 @@ describe('ParaBank Test', () => {
 
   it("User 1 Updates Contact Info", () => {
    // Log in as User 1
-   cy.visit("/");
+   cy.visit('/parabank/register.htm');
    cy.get(credentials.userName).type("David");
    cy.get(credentials.userPassword).type(credentials.userPasswordValue);
    
@@ -142,7 +142,7 @@ describe('ParaBank Test', () => {
   });
   it("User 2 Pays Bill", () => {
     // Log in as User 2
-    cy.visit("/");
+    cy.visit('/parabank/register.htm');
     cy.get(credentials.userName).type("EkeJones");
     cy.get(credentials.userPassword).type(credentials.userPasswordValue);
     
@@ -170,11 +170,11 @@ describe('ParaBank Test', () => {
    cy.get(buttons.overView).click();
 
    //User 2 sends Message to Customer Care 
-   cy.get('a[href="contact.htm"]').eq(1).click();
+   cy.get(buttons.feedBack).eq(1).click();
    cy.get(credentials.userName).type('Eke Jones')
    cy.get(credentials.userEmail).type('jofyoziydu@gufum.com')
    cy.get(credentials.phoneNumber).type('08020546796')
-   cy.get(buttons.feedBack).type(credentials.userfeedBack)
+   cy.get(buttons.feedBackArea).type(credentials.userfeedBack)
    cy.get(buttons.submitButton).click()
   });
   

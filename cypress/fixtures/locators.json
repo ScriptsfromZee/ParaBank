@@ -30,7 +30,8 @@
     "requestLoan" : "a[href='requestloan.htm']",
     "applyNow" : "input[value='Apply Now']",
     "submitButton" : "input[type='submit']",
-    "feedBack" : "textarea[id='message']"
+    "feedBackArea" : "textarea[id='message']",
+    "feedBack" : "a[href='contact.htm']"
   },
   "payee" :{
     "name" : "input[name='payee.name']",

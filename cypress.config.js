@@ -5,7 +5,7 @@ module.exports = defineConfig({
   "chromeWebSecurity": false,
   video: false,
   e2e: {
-    baseUrl:"https://parabank.parasoft.com/parabank/index.htm",
+    baseUrl:'https://parabank.parasoft.com',
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
