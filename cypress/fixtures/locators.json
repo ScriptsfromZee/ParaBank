@@ -3,7 +3,7 @@
     "firstName": "input[id='customer.firstName']",
     "lastName": "input[id='customer.lastName']" ,
     "userEmail" : "input[id='email']",
-    "userEmailValue" : "terrnest444@mailinator.com",
+    "userEmailValue" : "terrnegst444@mailinator.com",
     "userPassword": "input[id='customer.password']",
     "userPassword2": "input[id='repeatedPassword']",
     "userPasswordValue" : "20December@",
