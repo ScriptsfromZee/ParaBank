@@ -14,7 +14,7 @@ describe('ParaBank Test', () => {
     cy.visit("/parabank/register.htm");
     cy.log("Navigated to ParaBank Site");
     
-    // Each time you rerun the sign up tests, new account details are created
+    // Each time you rerun the sign up tests, new account details are created. You can also just change personal details 
     // Fill out User 1's registration form
     cy.get(credentials.firstName).type('David');
     cy.get(credentials.lastName).type('Jones');
@@ -100,7 +100,6 @@ describe('ParaBank Test', () => {
    cy.get(credentials.loginUsername).type('David');
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
-   
    // Submit login
    cy.get(buttons.login).click();
 
@@ -123,7 +122,6 @@ describe('ParaBank Test', () => {
    cy.get(credentials.loginUsername).type('David');
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
-
    // Submit login
    cy.get(buttons.login).click();
 
@@ -143,6 +141,7 @@ describe('ParaBank Test', () => {
    cy.get(buttons.logOut).click();
    
   });
+
   it("User 2 Pays Bill", () => {
     // Log in as User 2
     cy.visit('/parabank/index.htm');
@@ -179,5 +178,4 @@ describe('ParaBank Test', () => {
    cy.get(buttons.feedBackArea).type(credentials.userfeedBack)
    cy.get(buttons.submitButton).click()
   });
-  
 });
