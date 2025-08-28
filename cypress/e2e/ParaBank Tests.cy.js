@@ -145,6 +145,7 @@ describe('ParaBank Test', () => {
 
    // Submit loan request and logout
    cy.get(buttons.applyNow).click()
+   cy.contains('Congratulations, your loan has been approved.').should('be.visible')
    cy.get(buttons.logOut).click();
    
   });
