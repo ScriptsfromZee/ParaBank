@@ -116,7 +116,8 @@ describe('ParaBank Test', () => {
 
    // Update zip code
    const newZipCode = "500602";
-   cy.get(credentials.newUserZipcode).clear().type(newZipCode); 
+   cy.get(credentials.newUserZipcode).clear().type(newZipCode)
+   cy.contains('have been added to the system').should('be.visible')
 
    // Submit profile update and logout
    cy.get(buttons.updateProfile).click();
