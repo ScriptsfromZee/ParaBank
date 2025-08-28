@@ -1,12 +1,20 @@
+/// <reference types="cypress" />
+
 describe('ParaBank Test', () => {
   let credentials
   let buttons
   let payee
+  let user1
+  let user2
+  let billPayment
   beforeEach(() => {
     cy.fixture('locators').then((data) => {
       credentials = data.credentials;
       buttons = data.buttons
       payee = data.payee
+      user1 = data.user1
+      user2 = data.user2
+      billPayment = data.billPayment
     });
   });
 
@@ -16,15 +24,15 @@ describe('ParaBank Test', () => {
     
     // Each time you rerun the sign up tests, new account details are created. You can also just change personal details 
     // Fill out User 1's registration form
-    cy.get(credentials.firstName).type('David');
-    cy.get(credentials.lastName).type('Jones');
-    cy.get(credentials.userStreet).type('Woji');
-    cy.get(credentials.userCity).type('Port Harcourt');
-    cy.get(credentials.userState).type('Rivers');
-    cy.get(credentials.userZipcode).type('500101');
-    cy.get(credentials.phoneNumber).type('08020548796');
-    cy.get(credentials.userSsn).type('12345678');
-    cy.get(credentials.userName).type('David');
+    cy.get(credentials.firstName).type(user1.firstName);
+    cy.get(credentials.lastName).type(user1.lastName)
+    cy.get(credentials.userStreet).type(user1.userStreet);
+    cy.get(credentials.userCity).type(user1.userCity);
+    cy.get(credentials.userState).type(user1.userState);
+    cy.get(credentials.userZipcode).type(user1.userZipcode);
+    cy.get(credentials.phoneNumber).type(user1.phoneNumber);
+    cy.get(credentials.userSsn).type(user1.userSsn);
+    cy.get(credentials.userName).type(user1.userName);
     cy.get(credentials.userPassword).type(credentials.userPasswordValue);
     cy.get(credentials.userPassword2).type(credentials.userPasswordValue);
     
@@ -36,7 +44,7 @@ describe('ParaBank Test', () => {
     cy.visit('/parabank/index.htm');
 
     // Log in with User 1's credentials
-    cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginUsername).type(user1.userName);
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
     // Submit login
@@ -46,17 +54,16 @@ describe('ParaBank Test', () => {
   it('User 2 Sign Up', () => {
     cy.visit('/parabank/register.htm');
     cy.log("Navigated to ParaBank site");
-
     // Fill out User 2's registration form
-    cy.get(credentials.firstName).type('Eke');
-    cy.get(credentials.lastName).type('Jones');
-    cy.get(credentials.userStreet).type('Woji');
-    cy.get(credentials.userCity).type('Port Harcourt');
-    cy.get(credentials.userState).type('Rivers');
-    cy.get(credentials.userZipcode).type('500102');
-    cy.get(credentials.phoneNumber).type('08020553796');
-    cy.get(credentials.userSsn).type('12345378');
-    cy.get(credentials.userName).type('Eke');
+    cy.get(credentials.firstName).type(user2.firstName);
+    cy.get(credentials.lastName).type(user2.lastName);
+    cy.get(credentials.userStreet).type(user2.userStreet);
+    cy.get(credentials.userCity).type(user2.userCity);
+    cy.get(credentials.userState).type(user2.userState);
+    cy.get(credentials.userZipcode).type(user2.userZipcode);
+    cy.get(credentials.phoneNumber).type(user2.phoneNumber);
+    cy.get(credentials.userSsn).type(user2.userSsn);
+    cy.get(credentials.userName).type(user2.userName);
     cy.get(credentials.userPassword).type(credentials.userPasswordValue)
     cy.get(credentials.userPassword2).type(credentials.userPasswordValue);
     
@@ -67,7 +74,7 @@ describe('ParaBank Test', () => {
   it("User 1 Pays Bill", () => {
     // Log in as User 1
     cy.visit("/parabank/index.htm");
-    cy.get(credentials.loginUsername).type('David');
+    cy.get(credentials.loginUsername).type(user1.userName);
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
     // Submit login
@@ -77,15 +84,15 @@ describe('ParaBank Test', () => {
     cy.get(buttons.payBill).click();
 
     // Fill out bill payment form
-    cy.get(payee.name).type("Ekemini Jones");
-    cy.get(payee.address).type("5 Ago Palace Way");
-   cy.get(payee.city).type("Sango");
-   cy.get(payee.state).type("Lagos");
-   cy.get(payee.zipcode).type("500102");
-   cy.get(payee.phoneNumber).type("08020987645");
-   cy.get(payee.accountNumber).type("13899");
-   cy.get(payee.verifyAccount).type("13899");
-   cy.get(payee.amount).type("225");
+    cy.get(payee.name).type(billPayment.name);
+    cy.get(payee.address).type(billPayment.address);
+    cy.get(payee.city).type(billPayment.city);
+    cy.get(payee.state).type(billPayment.state);
+    cy.get(payee.zipcode).type(billPayment.zipcode);
+    cy.get(payee.phoneNumber).type(billPayment.phoneNumber);
+    cy.get(payee.accountNumber).type(billPayment.accountNumber);
+    cy.get(payee.verifyAccount).type(billPayment.verifyAccount);
+    cy.get(payee.amount).type(billPayment.amount);
 
    // Submit payment
    cy.get(buttons.sendPayment).click();
@@ -97,7 +104,7 @@ describe('ParaBank Test', () => {
   it("User 1 Updates Contact Info", () => {
    // Log in as User 1
    cy.visit('/parabank/index.htm');
-   cy.get(credentials.loginUsername).type('David');
+   cy.get(credentials.loginUsername).type(user1.userName);
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
    // Submit login
@@ -108,7 +115,7 @@ describe('ParaBank Test', () => {
    cy.wait(3000)
 
    // Update zip code
-   const newZipCode = "500102";
+   const newZipCode = "500602";
    cy.get(credentials.newUserZipcode).clear().type(newZipCode); 
 
    // Submit profile update and logout
@@ -119,7 +126,7 @@ describe('ParaBank Test', () => {
   it("User 1 Requests Loan", () => {
    // Log in as User 1
    cy.visit("/parabank/index.htm");
-   cy.get(credentials.loginUsername).type('David');
+   cy.get(credentials.loginUsername).type(user1.userName);
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
     
    // Submit login
@@ -142,40 +149,18 @@ describe('ParaBank Test', () => {
    
   });
 
-  it("User 2 Pays Bill", () => {
+  it("User 2 Sends Message to Customer Care", () => {
     // Log in as User 2
     cy.visit('/parabank/index.htm');
-    cy.get(credentials.loginUsername).type('Eke');
+    cy.get(credentials.loginUsername).type(user2.userName);
     cy.get(credentials.loginPassword).type(credentials.userPasswordValue);
-    
     cy.get(buttons.login).click();
-
-    // Navigate to bill payment
-    cy.get(buttons.payBill).click();
-
-    // Fill out bill payment form
-    cy.get(payee.name).type("Eke Jones");
-    cy.get(payee.address).type("5 Lekki Avenue");
-   cy.get(payee.city).type("Lekki");
-   cy.get(payee.state).type("Lagos");
-   cy.get(payee.zipcode).type("500101");
-   cy.get(payee.phoneNumber).type("0802098767896");
-   cy.get(payee.accountNumber).type("13788");
-   cy.get(payee.verifyAccount).type("13788");
-   cy.get(payee.amount).type("150");
-
-   // Submit payment
-   cy.get(buttons.sendPayment).click();
-   
-   // Return to overview
-   cy.get(buttons.overView).click();
-
-   //User 2 sends Message to Customer Care 
+    // Navigate to contact page
    cy.get(buttons.feedBack).eq(1).click();
-   cy.get(credentials.name).type('Eke Jones')
-   cy.get(credentials.userEmail).type('jofyoziydu@gufum.com')
-   cy.get(credentials.phone).type('08020546796')
+   cy.get(credentials.name).type(user2.firstName + " " + user2.lastName)
+   cy.get(credentials.userEmail).type(user2.userName + "@gmail.com")
+   cy.get(credentials.phone).type(user2.phoneNumber)
    cy.get(buttons.feedBackArea).type(credentials.userfeedBack)
-   cy.get(buttons.submitButton).click()
+   cy.get(buttons.submitButton).should('be.visible').click()
   });
 });

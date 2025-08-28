@@ -47,5 +47,38 @@
     "accountNumber" : "input[name='payee.accountNumber']",
     "verifyAccount" : "input[name='verifyAccount']",
     "amount" : "input[name='amount']"
+  },
+  "user1": {
+    "firstName": "David",
+    "lastName": "Jones",
+    "userStreet": "123 Main St",
+    "userCity": "Anytown", 
+    "userState": "Rivers", 
+    "userZipcode":"500101",
+    "phoneNumber":"070756756474",
+    "userSsn": "12345678",
+    "userName": "david4life"
+  },
+  "user2": {
+    "firstName": "Sarah",
+    "lastName": "Smith",
+    "userStreet": "456 Oak Ave",
+    "userCity": "Othertown", 
+    "userState": "Lagos", 
+    "userZipcode":"600202",
+    "phoneNumber":"08012345678",
+    "userSsn": "87654321",
+    "userName": "sarahrocks"
+  },
+  "billPayment": {
+    "name": "John Doe",
+    "address": "789 Pine Rd",
+    "city": "Sometown",
+    "state": "Abuja",
+    "zipcode": "700303",
+    "phoneNumber": "09098765432",
+    "accountNumber": "1122334455",
+    "verifyAccount": "1122334455",
+    "amount": "150.00"
   }
 }
